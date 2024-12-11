@@ -1,16 +1,43 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Search</title>
-  <link rel="stylesheet" type="text/css" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Invictus - Search</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-<div class="container">
-  <h1>Search</h1>
-  <input type="text" id="searchInput" placeholder="Enter your search query">
-  <button onclick="search()">Search</button>
-  <div id="searchResults"></div>
-</div>
+  <header>
+    <h1>Invictus</h1>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="search">
+      <h2>Explore Your Interests</h2>
+      <form>
+        <input type="text" placeholder="Search...">
+        <button type="submit">Search</button>
+      </form>
+    </section>
+  </main>
+
+  <footer>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="#">Explore</a></li>
+        <li><a href="#">Share</a></li>
+        <li><a href="#">Settings</a></li>
+        <li><a href="#">Download</a></li>
+      </ul>
+    </nav>
+  </footer>
+
+  <script src="search.js"></script>
 </body>
 </html>
-<script src="search.js"></script>
