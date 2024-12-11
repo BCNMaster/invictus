@@ -89,9 +89,11 @@ export default function Home() {
                   animate={{ opacity: 1, x: 0 }}
                   className="w-10 h-10 rounded-full bg-white/10 backdrop-blur-lg flex items-center justify-center"
                 >
-                  <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                  </svg>
+                  <Link href="/search">
+                    <svg className="w-5 h-5 text-white/60" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+                    </svg>
+                  </Link>
                 </motion.button>
               </nav>
             </header>
