@@ -118,4 +118,37 @@ export default function Home() {
                 </div>
 
                 <AnimatePresence mode="wait">
-                  {!surveyCompleted
+                  {!surveyCompleted && (
+                    <CareerSurvey onComplete={handleSurveyComplete} />
+                  )}
+                  {surveyCompleted && !showPricing && selectedCareer && (
+                    <CareerRoadmap careerId={selectedCareer} onComplete={handleRoadmapComplete} />
+                  )}
+                  {showPricing && (
+                    <PricingSection onSelect={handlePlanSelect} />
+                  )}
+                </AnimatePresence>
+              </div>
+            </main>
+          </>
+        )}
+
+        {showDashboard && selectedCareer && (
+          <Dashboard 
+            careerPath={CAREER_OPTIONS.find(career => career.id === selectedCareer) || {
+              id: selectedCareer,
+              title: 'Your Career Path',
+              category: 'General',
+              description: 'Your personalized learning journey',
+              color: '#6366f1',
+              image: '/careers/default.jpg',
+              estimatedTime: '6 months',
+              skills: []
+            }}
+            progress={userProgress}
+          />
+        )}
+      </div>
+    </div>
+  );
+}
