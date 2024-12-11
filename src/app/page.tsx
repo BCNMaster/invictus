@@ -64,12 +64,25 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
+  function performSearch() {
+    const query = (document.getElementById('search-input') as HTMLInputElement).value.toLowerCase();
+    const elements = document.querySelectorAll('body *'); // Adjust the selector based on your content
+
+    elements.forEach(function(element) {
+      if (element.textContent.toLowerCase().includes(query)) {
+        (element as HTMLElement).style.backgroundColor = 'yellow'; // Highlight search results
+      } else {
+        (element as HTMLElement).style.backgroundColor = '';
+      }
+    });
+  }
+
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#1a1d23]">
       {/* Gradient Orbs */}
       <div className="absolute top-0 left-0 w-[800px] h-[800px] bg-purple-500/30 rounded-full blur-[120px] -translate-x-1/2 -translate-y-1/2" />
       <div className="absolute bottom-0 right-0 w-[600px] h-[600px] bg-blue-500/20 rounded-full blur-[100px] translate-x-1/2 translate-y-1/2" />
-      
+
       {/* Content */}
       <div className="relative z-10">
         {!showDashboard && (
@@ -98,6 +111,12 @@ export default function Home() {
 
             <main className="px-8 py-12">
               <div className="max-w-7xl mx-auto">
+                {/* Search Bar */}
+                <div id="search-bar" className="mb-8">
+                  <input type="text" id="search-input" placeholder="Search..." className="w-full p-4 text-lg text-black" />
+                  <button onClick={performSearch} className="p-4 bg-purple-500 text-white">Search</button>
+                </div>
+
                 <AnimatePresence mode="wait">
                   {!surveyCompleted && (
                     <CareerSurvey onComplete={handleSurveyComplete} />
