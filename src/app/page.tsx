@@ -64,7 +64,7 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  const performSearch = () => {
+  function performSearch() {
     const query = (document.getElementById('search-input') as HTMLInputElement).value.toLowerCase();
     const elements = document.querySelectorAll('body *'); // Adjust the selector based on your content
 
@@ -75,7 +75,7 @@ export default function Home() {
         (element as HTMLElement).style.backgroundColor = '';
       }
     });
-  };
+  }
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#1a1d23]">
@@ -118,37 +118,4 @@ export default function Home() {
                 </div>
 
                 <AnimatePresence mode="wait">
-                  {!surveyCompleted && (
-                    <CareerSurvey onComplete={handleSurveyComplete} />
-                  )}
-                  {surveyCompleted && !showPricing && selectedCareer && (
-                    <CareerRoadmap careerId={selectedCareer} onComplete={handleRoadmapComplete} />
-                  )}
-                  {showPricing && (
-                    <PricingSection onSelect={handlePlanSelect} />
-                  )}
-                </AnimatePresence>
-              </div>
-            </main>
-          </>
-        )}
-
-        {showDashboard && selectedCareer && (
-          <Dashboard 
-            careerPath={CAREER_OPTIONS.find(career => career.id === selectedCareer) || {
-              id: selectedCareer,
-              title: 'Your Career Path',
-              category: 'General',
-              description: 'Your personalized learning journey',
-              color: '#6366f1',
-              image: '/careers/default.jpg',
-              estimatedTime: '6 months',
-              skills: []
-            }}
-            progress={userProgress}
-          />
-        )}
-      </div>
-    </div>
-  );
-}
+                  {!surveyCompleted
