@@ -394,4 +394,8 @@ export default function CareerSurvey({ onComplete }: CareerSurveyProps) {
           whileTap={{ scale: 0.95 }}
         >
           Back
-        </motion.button
+        </motion.button>
+      )}
+    </div>
+  );
+}
