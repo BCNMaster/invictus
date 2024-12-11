@@ -371,4 +371,5 @@ export default function CareerSurvey({ onComplete }: CareerSurveyProps) {
           className="min-h-[400px]"
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold
+            <h2 className="text-2xl font-bold text-white mb-2">
+              {surveyState.steps[surveyState.current
