@@ -347,7 +347,7 @@ export default function CareerSurvey({ onComplete }: CareerSurveyProps) {
                 backgroundColor: index <= surveyState.currentStep ? '#A855F7' : 'rgba(255, 255, 255, 0.1)'
               }}
             >
-              {step.isCompleted ? '✓' : index + 1}
+              {step.isCompleted ? '\u2713' : index + 1}
             </motion.div>
             {index < surveyState.steps.length - 1 && (
               <div
@@ -371,31 +371,4 @@ export default function CareerSurvey({ onComplete }: CareerSurveyProps) {
           className="min-h-[400px]"
         >
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              {surveyState.steps[surveyState.currentStep].title}
-            </h2>
-            <p className="text-white/60">
-              {surveyState.steps[surveyState.currentStep].description}
-            </p>
-          </div>
-          {renderStep()}
-        </motion.div>
-      </AnimatePresence>
-
-      {/* Back Button - Only show if not on first step */}
-      {surveyState.currentStep > 0 && (
-        <motion.button
-          initial={{ opacity: 0 }}
-          animate={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          onClick={handlePrevStep}
-          className="fixed bottom-8 left-8 px-6 py-2 rounded-lg bg-white/10 hover:bg-white/20 text-white"
-          whileHover={{ scale: 1.05 }}
-          whileTap={{ scale: 0.95 }}
-        >
-          Back
-        </motion.button>
-      )}
-    </div>
-  );
-}
+            <h2 className="text-2xl font-bold
