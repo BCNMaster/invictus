@@ -64,7 +64,7 @@ export default function Home() {
     window.scrollTo({ top: 0, behavior: 'smooth' });
   };
 
-  function performSearch() {
+  const performSearch = () => {
     const query = (document.getElementById('search-input') as HTMLInputElement).value.toLowerCase();
     const elements = document.querySelectorAll('body *'); // Adjust the selector based on your content
 
@@ -75,7 +75,7 @@ export default function Home() {
         (element as HTMLElement).style.backgroundColor = '';
       }
     });
-  }
+  };
 
   return (
     <div className="relative min-h-screen overflow-hidden bg-[#1a1d23]">
