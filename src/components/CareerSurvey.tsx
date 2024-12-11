@@ -370,6 +370,4 @@ export default function CareerSurvey({ onComplete }: CareerSurveyProps) {
           transition={{ duration: 0.3 }}
           className="min-h-[400px]"
         >
-          <div className="text-center mb-8">
-            <h2 className="text-2xl font-bold text-white mb-2">
-              {surveyState.steps[surveyState.current
+          <div className="text
