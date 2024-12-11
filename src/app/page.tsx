@@ -8,6 +8,7 @@ import PricingSection from '../components/PricingSection';
 import Dashboard from '../components/Dashboard';
 import { SurveyResponse, LearningProgress } from '../types/survey';
 import { CAREER_OPTIONS } from '../constants/careerOptions';
+import Link from 'next/link';  // Added import
 
 export default function Home() {
   const [surveyCompleted, setSurveyCompleted] = useState(false);
